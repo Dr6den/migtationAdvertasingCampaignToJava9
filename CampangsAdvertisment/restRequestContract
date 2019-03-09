@@ -1,0 +1,115 @@
+GET
+http://localhost:8081/resource/getAd/1
+{"id":1,"name":"Nadia","platforms":[],"asserUrl":"Nadia's asset","status":"ACTIVE"}
+
+GET
+http://localhost:8081/resource/getCampaign/2
+{"id":2,"name":"Patti","status":"PAUSED","startDate":58382982061000,"endDate":58382982061000,"ads":[{"id":3,"name":"Lussi","platforms":[],"asserUrl":"Lussi's asset","status":"PAUSED"},{"id":4,"name":"Maria","platforms":[],"asserUrl":"Maria's asset","status":"PAUSED"},{"id":15,"name":"Lussi","platforms":[],"asserUrl":"Lussi's asset","status":"PAUSED"},{"id":16,"name":"Maria","platforms":[],"asserUrl":"Maria's asset","status":"PAUSED"},{"id":22,"name":"Lussi","platforms":["WEB","IOS"],"asserUrl":"Lussi's asset","status":"PAUSED"},{"id":23,"name":"Maria","platforms":["ANDROID"],"asserUrl":"Maria's asset","status":"PAUSED"}]}
+
+POST
+http://localhost:8081/resource/getCampaign/4
+{"id":4,"name":"some campaign","status":"FINISHED","startDate":99999999,"endDate":199999999,"ads":[{"id":104,"name":"some ad","platforms":["WEB","ANDROID"],"asserUrl":"Asset url","status":"ACTIVE"}]}
+
+http://localhost:8081/resource/createAd/4
+Body:
+{
+  "id": 0,
+  "name": "Maria",
+  "platforms": [],
+  "asserUrl": "Maria's asset",
+  "status": "PAUSED"
+}
+
+PUT
+http://localhost:8081/resource/updateAd/4
+Body:
+{
+  "id": 602,
+  "name": "Jane",
+  "platforms": ["WEB","ANDROID"],
+  "asserUrl": "Jane's asset",
+  "status": "ACTIVE"
+}
+
+DELETE
+http://localhost:8081/resource/deleteAd/602
+
+POST
+http://localhost:8081/resource/createCampaign
+Body:
+{
+  "id": 0,
+  "name": "Nadia's campaign",
+  "status": "FINISHED",
+  "startDate": 99999999,
+  "endDate": 199999999,
+  "ads": [
+    {
+      "id": 677,
+      "name": "Nadia",
+      "platforms": ["WEB"],
+      "asserUrl": "Nadia's asset",
+      "status": "PAUSED"
+    }
+  ]
+}
+
+PUT
+http://localhost:8081/resource/updateCampaign
+Body:
+{
+  "id": 362,
+  "name": "Nadia's campaign activate",
+  "status": "ACTIVE",
+  "startDate": 11111111111111,
+  "endDate": 2222222222222,
+  "ads": [
+    {
+      "id": 677,
+      "name": "Nadia ac",
+      "platforms": ["IOS"],
+      "asserUrl": "Nadia's asset new",
+      "status": "PAUSED"
+    }
+  ]
+}
+
+DELETE
+http://localhost:8081/resource/deleteCampaign/362
+
+GET
+http://localhost:8081/resource/getSummary
+[{"id":231,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":230,"name":"some campaign","status":"FINISHED","numberOfAds":1},
+{"id":199,"name":"some other campaign","status":"ACTIVE","numberOfAds":1}]
+
+http://localhost:8081/resource/getSummary?maxItems=4
+[{"id":231,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":230,"name":"some campaign","status":"FINISHED","numberOfAds":1},
+{"id":199,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":198,"name":"some campaign","status":"FINISHED","numberOfAds":1}]
+
+http://localhost:8081/resource/getSummary?maxItems=4&sortingParameter=name
+[{"id":191,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":195,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":193,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},
+{"id":187,"name":"some other campaign","status":"ACTIVE","numberOfAds":1}]
+
+http://localhost:8081/resource/getSummary?maxItems=4&sortingParameter=status
+[{"id":151,"name":"some campaign","status":"FINISHED","numberOfAds":1},
+{"id":149,"name":"some campaign","status":"FINISHED","numberOfAds":1},
+{"id":152,"name":"some campaign","status":"FINISHED","numberOfAds":1},
+{"id":150,"name":"some campaign","status":"FINISHED","numberOfAds":1}]
+
+http://localhost:8081/resource/getSummary?maxItems=4&sortingParameter=adsCount
+[{"id":1,"name":"Inna","status":"ACTIVE","numberOfAds":89},
+{"id":2,"name":"Patti","status":"PAUSED","numberOfAds":6},
+{"id":3,"name":"Faith","status":"FINISHED","numberOfAds":6},
+{"id":4,"name":"some campaign","status":"FINISHED","numberOfAds":4}]
+
+http://localhost:8081/resource/getSummary?filterByName=Inna
+[{"id":1,"name":"Inna","status":"ACTIVE","numberOfAds":89}]
+
+http://localhost:8081/resource/getSummary?filterByStatus=1
+[{"id":231,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},{"id":199,"name":"some other campaign","status":"ACTIVE","numberOfAds":1},{"id":197,"name":"some other campaign","status":"ACTIVE","numberOfAds":1}]
+

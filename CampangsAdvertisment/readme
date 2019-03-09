@@ -1,0 +1,3 @@
+for running project, just run maven clean install, for creating database shema run DatabaseInitializer.java. Then you can run web project using any webserver.
+As simple as possible.
+Please read restRequestContract.txt file for finding information, which rest queries are valid.
