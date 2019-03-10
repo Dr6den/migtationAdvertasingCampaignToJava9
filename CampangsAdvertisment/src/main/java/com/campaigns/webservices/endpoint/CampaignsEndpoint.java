@@ -1,8 +1,8 @@
 package com.campaigns.webservices.endpoint;
 
-import com.campaigns.domain.Ad;
-import com.campaigns.domain.Campaign;
-import com.campaigns.domain.Summary;
+import com.campaign.domain.Ad;
+import com.campaign.domain.Campaign;
+import com.campaign.domain.Summary;
 import com.campaigns.domain.service.CampaignsService;
 import java.util.List;
 import javax.inject.Inject;

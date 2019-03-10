@@ -1,10 +1,10 @@
 package com.campaigns.dao;
 
-import com.campaigns.domain.Ad;
-import com.campaigns.domain.Campaign;
-import com.campaigns.domain.Platform;
+import com.campaign.domain.Ad;
+import com.campaign.domain.Campaign;
+import com.campaign.domain.Platform;
 import com.campaigns.domain.Status;
-import com.campaigns.domain.Summary;
+import com.campaign.domain.Summary;
 import com.campaigns.webservices.config.DatabaseInitializer;
 import com.campaigns.webservices.config.IJdbcConnector;
 import java.sql.Connection;
@@ -49,7 +49,7 @@ public class CampaignsDao {
             while (rs.next()) {
                 Summary summary = new Summary();
                 summary.setId(rs.getInt("id"));
-                summary.setName("NADIA1");
+                summary.setName("NADIA11");
                 summary.setStatus(Status.fromInteger(rs.getInt("status")));
                 summary.setNumberOfAds(rs.getInt("ads_count"));
                 summaries.add(summary);

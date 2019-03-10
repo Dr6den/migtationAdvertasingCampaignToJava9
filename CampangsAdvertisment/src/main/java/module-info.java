@@ -5,6 +5,7 @@
  */
 
 module AdvertizingCampaigns {
+    requires domain;
     requires javax.servlet.api;
     requires jersey.container.servlet;
     requires jersey.container.servlet.core;

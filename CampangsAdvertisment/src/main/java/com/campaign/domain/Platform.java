@@ -1,4 +1,4 @@
-package com.campaigns.domain;
+package com.campaign.domain;
 
 /**
  *

@@ -1,4 +1,6 @@
-package com.campaigns.domain;
+package com.campaign.domain;
+
+import com.campaigns.domain.Status;
 
 /**
  *
