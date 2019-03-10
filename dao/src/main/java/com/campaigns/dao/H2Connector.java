@@ -1,4 +1,4 @@
-package com.campaigns.webservices.config;
+package com.campaigns.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

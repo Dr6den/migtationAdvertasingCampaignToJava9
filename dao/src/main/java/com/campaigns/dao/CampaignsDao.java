@@ -5,8 +5,6 @@ import com.campaigns.domain.Campaign;
 import com.campaigns.domain.Platform;
 import com.campaigns.domain.Status;
 import com.campaigns.domain.Summary;
-import com.campaigns.webservices.config.DatabaseInitializer;
-import com.campaigns.webservices.config.IJdbcConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,13 +21,10 @@ import javax.inject.Inject;
  */
 public class CampaignsDao {
     private IJdbcConnector connector;
-    private DatabaseInitializer databaseInitializer;
     
     @Inject
-    public CampaignsDao(IJdbcConnector con, DatabaseInitializer initializer) {
+    public CampaignsDao(IJdbcConnector con) {
         this.connector = con;
-        this.databaseInitializer = initializer;
-        //initializer.createDatabase();
     }    
     
     public List<Summary> getSummary(int limit, String filterByName, String filterByStatus, String sortingParameter) {
@@ -49,7 +44,7 @@ public class CampaignsDao {
             while (rs.next()) {
                 Summary summary = new Summary();
                 summary.setId(rs.getInt("id"));
-                summary.setName("NADIA11");
+                summary.setName(rs.getString("name"));
                 summary.setStatus(Status.fromInteger(rs.getInt("status")));
                 summary.setNumberOfAds(rs.getInt("ads_count"));
                 summaries.add(summary);

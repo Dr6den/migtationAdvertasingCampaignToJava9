@@ -7,8 +7,8 @@ import com.campaigns.domain.Platform;
 import com.campaigns.domain.Status;
 import com.campaigns.domain.Summary;
 import com.campaigns.webservices.config.DatabaseInitializer;
-import com.campaigns.webservices.config.H2Connector;
-import com.campaigns.webservices.config.IJdbcConnector;
+import com.campaigns.dao.H2Connector;
+import com.campaigns.dao.IJdbcConnector;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +34,7 @@ public class CampaignDaoTest {
     
     public CampaignDaoTest() {
         con = new H2Connector();
-        initializer = new DatabaseInitializer();
-        campaignsDao = new CampaignsDao(con, initializer);
+        campaignsDao = new CampaignsDao(con);
     }
     
     @Test

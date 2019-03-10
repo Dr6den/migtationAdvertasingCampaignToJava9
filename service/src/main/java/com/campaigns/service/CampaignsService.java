@@ -1,4 +1,4 @@
-package com.campaigns.domain.service;
+package com.campaigns.service;
 
 import com.campaigns.dao.CampaignsDao;
 import com.campaigns.domain.Ad;

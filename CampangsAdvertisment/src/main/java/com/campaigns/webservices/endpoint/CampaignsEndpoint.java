@@ -3,7 +3,7 @@ package com.campaigns.webservices.endpoint;
 import com.campaigns.domain.Ad;
 import com.campaigns.domain.Campaign;
 import com.campaigns.domain.Summary;
-import com.campaigns.domain.service.CampaignsService;
+import com.campaigns.service.CampaignsService;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

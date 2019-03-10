@@ -1,7 +1,9 @@
 package com.campaigns.webservices.config;
 
 import com.campaigns.dao.CampaignsDao;
-import com.campaigns.domain.service.CampaignsService;
+import com.campaigns.dao.H2Connector;
+import com.campaigns.dao.IJdbcConnector;
+import com.campaigns.service.CampaignsService;
 import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;

@@ -1,6 +1,5 @@
 package com.campaigns.domain;
 
-import com.campaigns.domain.Status;
 import java.sql.Timestamp;
 import java.util.List;
 
