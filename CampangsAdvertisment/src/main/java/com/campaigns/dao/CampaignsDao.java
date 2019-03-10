@@ -1,10 +1,10 @@
 package com.campaigns.dao;
 
-import com.campaign.domain.Ad;
-import com.campaign.domain.Campaign;
-import com.campaign.domain.Platform;
+import com.campaigns.domain.Ad;
+import com.campaigns.domain.Campaign;
+import com.campaigns.domain.Platform;
 import com.campaigns.domain.Status;
-import com.campaign.domain.Summary;
+import com.campaigns.domain.Summary;
 import com.campaigns.webservices.config.DatabaseInitializer;
 import com.campaigns.webservices.config.IJdbcConnector;
 import java.sql.Connection;

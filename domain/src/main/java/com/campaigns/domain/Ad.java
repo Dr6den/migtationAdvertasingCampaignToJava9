@@ -1,6 +1,6 @@
-package com.campaign.domain;
+package com.campaigns.domain;
 
-import com.campaign.domain.Platform;
+import com.campaigns.domain.Platform;
 import com.campaigns.domain.Status;
 import java.util.List;
 

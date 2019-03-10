@@ -1,9 +1,9 @@
 package com.campaigns.domain.service;
 
 import com.campaigns.dao.CampaignsDao;
-import com.campaign.domain.Ad;
-import com.campaign.domain.Campaign;
-import com.campaign.domain.Summary;
+import com.campaigns.domain.Ad;
+import com.campaigns.domain.Campaign;
+import com.campaigns.domain.Summary;
 import java.util.List;
 import javax.inject.Inject;
 

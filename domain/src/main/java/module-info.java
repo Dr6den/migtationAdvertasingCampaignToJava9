@@ -3,4 +3,5 @@
  */
 module domain {
     exports com.campaigns.domain;
+    requires java.sql;
 }
